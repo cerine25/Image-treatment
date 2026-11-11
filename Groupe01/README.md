@@ -103,6 +103,17 @@ Images, embeddings and FAISS indexes are **not stored in Git** (size).
 Either regenerate them with the notebooks (`01b`, `02`, `04`) and scripts above, or
 download the prebuilt data from the GitHub Release `g1-v1.2`
 (see `RELEASE_AND_PR_GUIDE.md`; SHA-256 checksums are attached to the release).
+
+Prebuilt data (Windows PowerShell), from the repository root:
+
+    Get-FileHash g1-v1.2-embeddings.zip -Algorithm SHA256
+    Get-FileHash g1-v1.2-faiss-indexes.zip -Algorithm SHA256
+    Get-FileHash g1-v1.2-test1000-embeddings.zip -Algorithm SHA256
+    # compare each hash with SHA256SUMS.txt attached to the g1-v1.2 release
+    Expand-Archive -Path g1-v1.2-embeddings.zip -DestinationPath .
+    Expand-Archive -Path g1-v1.2-faiss-indexes.zip -DestinationPath .
+    Expand-Archive -Path g1-v1.2-test1000-embeddings.zip -DestinationPath .
+
 See also `PHASE1_REPRODUCTION_GUIDE.md` and `docs/DATASET_CARD.md`.
 
 ## Contributors

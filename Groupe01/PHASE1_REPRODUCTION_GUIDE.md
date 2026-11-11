@@ -682,6 +682,17 @@ confidence threshold 0.7
 
 It is not required for the core frozen 10,000-image KB metadata and is not included in the full runner's default order.
 
+**Recorded run** (`artifacts/audit/detector_info.json`):
+
+- 200 images processed (`n_images` = 200: the historical validation and test images).
+- 1,568 detections in `artifacts/tables/detections_detr.jsonl`.
+
+**Not recorded / not evaluated:**
+
+- The `transformers` version and the model revision are not recorded.
+- Detector accuracy (IoU, mAP) was not evaluated.
+- The frozen validation/test metadata remain the COCO annotations (oracle).
+
 **Outputs:**
 
 - `artifacts/tables/kb_captions.jsonl`
