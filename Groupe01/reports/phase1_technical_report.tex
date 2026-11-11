@@ -973,11 +973,15 @@ text embeddings: 0.4842). Which of the two sets matches the SHA256 recorded in
 the manifest is not established. The small changes for CLIP and DINOv2
 image-to-image are of unestablished cause.
 
-Several caveats apply. The validation set has only 100 images and the
-10-fold standard deviation of SigLIP image-to-text was large (0.1913).
-Only aggregate metrics are stored for the 1,000-image test, so no
-significance test is reported; differences of a few hundredths of CIDEr
-(e.g.\ DINOv2 versus SigLIP image-to-image) must not be read as an ordering.
+Several caveats apply. The validation set contains only 100 images. The
+reported standard deviation (0.1913) is the standard deviation of the
+mean CIDEr scores across ten non-overlapping subsets of ten validation
+images; it is a descriptive measure of variability, not a cross-validation
+estimate. The 95\% confidence intervals are percentile bootstrap intervals
+computed from 2,000 resamples with replacement. The paired Wilcoxon comparisons are exploratory because the reference configuration was selected on the same validation set; the Bonferroni correction does not remove this selection bias. Only aggregate metrics are
+stored for the 1,000-image test, so no significance test is reported;
+differences of a few hundredths of CIDEr (e.g.\ DINOv2 versus SigLIP
+image-to-image) must not be interpreted as a reliable ordering.
 The primary encoder of release g1-v1.1 (\texttt{siglip-b16}) is not changed
 after seeing test results, since that would be test-set selection; users of the
 release should choose their encoder through their own validation protocol,
