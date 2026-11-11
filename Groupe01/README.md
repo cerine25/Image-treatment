@@ -3,6 +3,10 @@
 Shared preprocessing for the comparative study of RAG techniques for image
 captioning on MS COCO. Group G1 technique: Naive / Dense RAG.
 
+**Authors:** Cerine, Nour (akhdari), Sarah (Gherbi), Maria (Saadi)
+
+**Data and artifacts:** `artifacts/` (JSON/CSV/PNG) is in the public repository https://github.com/cerine25/rag-image-final. Embeddings and FAISS indexes are in the release `g1-v1.2` of that repository.
+
 **Release `g1-v1.2`** — official test set: **1,000 images** (COCO val2017).
 The 100-image test of the earlier frozen release `g1-v1.1` is kept unchanged as
 a *legacy* set (see [Test sets](#test-sets)).
